@@ -1,0 +1,148 @@
+/*
+	File: styles.css 
+	GUI Assignment: HW5 Implementing a Bit of Scrabble with Drag-and-Drop   
+	Nikolas Haddock, UMass Lowell Computer Science, 
+	nikolas_haddock@student.uml.edu 
+	Copyright (c) 2024 by Nikolas Haddock.  All rights reserved.
+	This is an external css file that styles an HTML file to show one line of a 
+    Scrabble board, a rack for Scrabble pieces, and other UI elements.
+*/
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #8db1be;
+    margin: 0;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    text-align: center;
+    -webkit-text-stroke: 2px black;
+    /* Outlines the text */
+}
+
+/* Makes every other letter in the header red */
+h1 span:nth-child(2n-1) {
+    color: #e76566;
+}
+
+/* Makes every other letter in the header blue */
+h1 span:nth-child(2n) {
+    color: #a3d3e2;
+}
+
+.blankButtons {
+    border: none;
+    background-color: white;
+}
+
+.blankButtons:active {
+    transform: translateY(1px);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin: 100px auto;
+    border: solid black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+    padding: 30px;
+    background-color: #b9cdd4;
+}
+
+#board {
+    margin: 10px;
+    /* I created this myself in Photoshop with inspiration from the given file */
+    background-image: url("../graphics_data/Scrabble_Board_OneLine.png");
+    width: 1080px;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Sets the look of the tiles on the board */
+#board img {
+    width: 62px;
+    height: 62px;
+    border-radius: 4px;
+}
+
+/* sets the size of the droppable spaces on the board */
+#board div {
+    width: 64px;
+    height: 64px;
+    margin: 4px;
+}
+
+#buttons {
+    margin: 30px;
+    width: 300px;
+}
+
+#buttons button {
+    height: 30px;
+    width: 97px;
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: 0 4px 4px 0 black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#buttons button:active {
+    transform: translateY(1px);
+    /* animates buttons */
+}
+
+#buttons button:hover {
+    filter: brightness(.7);
+
+}
+
+/* ,akes two outside buttons red */
+#buttons button:nth-child(2n-1) {
+    background-color: #e76566;
+}
+
+/* makes middle button blue */
+#buttons button:nth-child(2n) {
+    background-color: #a3d3e2;
+}
+
+#holder {
+    margin: 10px 10px 10px 10px;
+    /* This was taken from the given zip file */
+    background-image: url("../graphics_data/scrabble-tile-holder-406774_640.png");
+    width: 480px;
+    height: 137px;
+}
+
+/* sets how the tiles look in the rack */
+#holder img {
+    width: 62px;
+    height: 62px;
+    margin: 36px 1px 1px 1px;
+    border-radius: 4px;
+}
+
+#data {
+    display: flex;
+    margin: 10px;
+}
+
+#data div {
+    display: flex;
+    flex-direction: row;
+}
+
+#data .label {
+    margin-right: 5px;
+    margin-left: 20px;
+}
+
+#error-message {
+    color: red;
+}
